@@ -1,0 +1,148 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Content Project
+type: object
+required:
+- id
+- created_at
+- privacy
+- status
+- title
+- central_question
+- stage
+properties:
+  id:
+    type: string
+    pattern: ^[A-Z]{2,4}-[0-9]{3,}$
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type:
+    - string
+    - 'null'
+    format: date-time
+  privacy:
+    enum:
+    - private
+    - internal
+    - shareable
+    - public
+  status:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  links:
+    type: array
+    items:
+      type: object
+      required:
+      - relation
+      - target_id
+      properties:
+        relation:
+          type: string
+        target_id:
+          type: string
+      additionalProperties: false
+  title:
+    type: string
+  central_question:
+    type: string
+  stage:
+    enum:
+    - capture
+    - connect
+    - interrogate
+    - research
+    - synthesize
+    - draft
+    - review
+    - approved
+    - published
+    - learn
+  canonical_thesis:
+    type:
+    - string
+    - 'null'
+  memory_ids:
+    type: array
+    items:
+      type: string
+  question_ids:
+    type: array
+    items:
+      type: string
+  belief_ids:
+    type: array
+    items:
+      type: string
+  tension_ids:
+    type: array
+    items:
+      type: string
+  claim_ids:
+    type: array
+    items:
+      type: string
+  narrative_functions:
+    type: object
+    properties:
+      experience:
+        type:
+        - string
+        - 'null'
+      pattern:
+        type:
+        - string
+        - 'null'
+      reframe:
+        type:
+        - string
+        - 'null'
+      proof:
+        type:
+        - string
+        - 'null'
+      principle:
+        type:
+        - string
+        - 'null'
+      intervention:
+        type:
+        - string
+        - 'null'
+    additionalProperties: false
+  human_approvals:
+    type: array
+    items:
+      type: object
+      required:
+      - gate
+      - approved
+      properties:
+        gate:
+          type: string
+        approved:
+          type: boolean
+        approved_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        note:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  ai_contributions:
+    type: array
+    items:
+      type: string
+  human_edits:
+    type: array
+    items:
+      type: string
+additionalProperties: false

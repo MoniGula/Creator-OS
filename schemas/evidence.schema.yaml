@@ -1,0 +1,91 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Evidence
+type: object
+required:
+- id
+- created_at
+- privacy
+- status
+- title
+- source_type
+- relationship_to_claim
+properties:
+  id:
+    type: string
+    pattern: ^[A-Z]{2,4}-[0-9]{3,}$
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type:
+    - string
+    - 'null'
+    format: date-time
+  privacy:
+    enum:
+    - private
+    - internal
+    - shareable
+    - public
+  status:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  links:
+    type: array
+    items:
+      type: object
+      required:
+      - relation
+      - target_id
+      properties:
+        relation:
+          type: string
+        target_id:
+          type: string
+      additionalProperties: false
+  title:
+    type: string
+  source_type:
+    enum:
+    - primary
+    - secondary
+    - expert_commentary
+    - user_generated
+    - personal_record
+    - other
+  creator_or_publisher:
+    type:
+    - string
+    - 'null'
+  url_or_locator:
+    type:
+    - string
+    - 'null'
+  retrieved_at:
+    type:
+    - string
+    - 'null'
+    format: date-time
+  relevant_summary:
+    type: string
+  relationship_to_claim:
+    enum:
+    - supports
+    - challenges
+    - contextualizes
+    - mixed
+  quality:
+    enum:
+    - high
+    - medium
+    - low
+    - unassessed
+  limitations:
+    type: array
+    items:
+      type: string
+additionalProperties: false

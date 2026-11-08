@@ -1,0 +1,22 @@
+id: MEM-001
+created_at: '2026-11-07T18:00:00-05:00'
+updated_at: null
+privacy: internal
+status: draft
+tags:
+- ai-context
+links: []
+event_or_observation: I assumed the chat system could see message timestamps.
+source_type: chat
+source_ref: null
+context_known:
+- The conversation sequence was visible.
+context_missing:
+- Reliable per-message timestamp metadata.
+interpretations:
+- Conversational continuity can be mistaken for complete situational awareness.
+emotional_tone:
+- curious
+- corrective
+creator_confirmed: true
+confidence: high

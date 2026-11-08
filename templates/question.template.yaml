@@ -1,0 +1,22 @@
+id: QST-001
+created_at: '2026-11-07T18:00:00-05:00'
+updated_at: null
+privacy: shareable
+status: active
+tags:
+- consciousness
+- ai
+links:
+- relation: arose_from
+  target_id: MEM-001
+surface_question: Can AI be conscious?
+deeper_question: Is consciousness produced by particular systems or fundamental to
+  reality?
+related_question_ids: []
+domains:
+- AI
+- philosophy_of_mind
+- spirituality
+importance_to_creator: 5
+audience_relevance: 4
+answer_state: exploring

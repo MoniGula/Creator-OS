@@ -1,0 +1,69 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Tension
+type: object
+required:
+- id
+- created_at
+- privacy
+- status
+- statement_a
+- statement_b
+properties:
+  id:
+    type: string
+    pattern: ^[A-Z]{2,4}-[0-9]{3,}$
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type:
+    - string
+    - 'null'
+    format: date-time
+  privacy:
+    enum:
+    - private
+    - internal
+    - shareable
+    - public
+  status:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  links:
+    type: array
+    items:
+      type: object
+      required:
+      - relation
+      - target_id
+      properties:
+        relation:
+          type: string
+        target_id:
+          type: string
+      additionalProperties: false
+  statement_a:
+    type: string
+  statement_b:
+    type: string
+  tension_type:
+    enum:
+    - contradiction
+    - paradox
+    - tradeoff
+    - change_over_time
+    - different_contexts
+    - unresolved
+  candidate_syntheses:
+    type: array
+    items:
+      type: string
+  creator_resolution:
+    type:
+    - string
+    - 'null'
+additionalProperties: false

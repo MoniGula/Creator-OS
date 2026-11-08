@@ -1,0 +1,33 @@
+id: PRJ-001
+created_at: '2026-11-07T18:00:00-05:00'
+updated_at: null
+privacy: internal
+status: active
+tags:
+- pilot
+links: []
+title: Context, Consciousness, and Divine Oneness
+central_question: If consciousness is fundamental, can artificial intelligence be
+  conscious?
+stage: capture
+canonical_thesis: null
+memory_ids:
+- MEM-001
+question_ids:
+- QST-001
+belief_ids:
+- BEL-001
+tension_ids:
+- TEN-001
+claim_ids:
+- CLM-001
+narrative_functions:
+  experience: The timestamp misunderstanding.
+  pattern: null
+  reframe: null
+  proof: null
+  principle: null
+  intervention: null
+human_approvals: []
+ai_contributions: []
+human_edits: []

@@ -1,0 +1,75 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Question
+type: object
+required:
+- id
+- created_at
+- privacy
+- status
+- surface_question
+- deeper_question
+properties:
+  id:
+    type: string
+    pattern: ^[A-Z]{2,4}-[0-9]{3,}$
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type:
+    - string
+    - 'null'
+    format: date-time
+  privacy:
+    enum:
+    - private
+    - internal
+    - shareable
+    - public
+  status:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  links:
+    type: array
+    items:
+      type: object
+      required:
+      - relation
+      - target_id
+      properties:
+        relation:
+          type: string
+        target_id:
+          type: string
+      additionalProperties: false
+  surface_question:
+    type: string
+  deeper_question:
+    type: string
+  related_question_ids:
+    type: array
+    items:
+      type: string
+  domains:
+    type: array
+    items:
+      type: string
+  importance_to_creator:
+    type: integer
+    minimum: 1
+    maximum: 5
+  audience_relevance:
+    type: integer
+    minimum: 1
+    maximum: 5
+  answer_state:
+    enum:
+    - open
+    - exploring
+    - provisional
+    - settled_for_now
+additionalProperties: false

@@ -1,0 +1,72 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Learning
+type: object
+required:
+- id
+- created_at
+- privacy
+- status
+- source_project_id
+- signal_type
+- observation
+properties:
+  id:
+    type: string
+    pattern: ^[A-Z]{2,4}-[0-9]{3,}$
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type:
+    - string
+    - 'null'
+    format: date-time
+  privacy:
+    enum:
+    - private
+    - internal
+    - shareable
+    - public
+  status:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  links:
+    type: array
+    items:
+      type: object
+      required:
+      - relation
+      - target_id
+      properties:
+        relation:
+          type: string
+        target_id:
+          type: string
+      additionalProperties: false
+  source_project_id:
+    type: string
+  signal_type:
+    enum:
+    - resonance
+    - misunderstanding
+    - objection
+    - evidence
+    - testimony
+    - noise
+  observation:
+    type: string
+  proposed_update:
+    type:
+    - string
+    - 'null'
+  target_ids:
+    type: array
+    items:
+      type: string
+  creator_approved:
+    type: boolean
+additionalProperties: false

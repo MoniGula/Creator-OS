@@ -1,0 +1,88 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Memory
+type: object
+required:
+- id
+- created_at
+- privacy
+- status
+- event_or_observation
+- creator_confirmed
+properties:
+  id:
+    type: string
+    pattern: ^[A-Z]{2,4}-[0-9]{3,}$
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type:
+    - string
+    - 'null'
+    format: date-time
+  privacy:
+    enum:
+    - private
+    - internal
+    - shareable
+    - public
+  status:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  links:
+    type: array
+    items:
+      type: object
+      required:
+      - relation
+      - target_id
+      properties:
+        relation:
+          type: string
+        target_id:
+          type: string
+      additionalProperties: false
+  event_or_observation:
+    type: string
+    minLength: 1
+  source_type:
+    enum:
+    - direct_experience
+    - journal
+    - chat
+    - voice_note
+    - document
+    - other
+  source_ref:
+    type:
+    - string
+    - 'null'
+  context_known:
+    type: array
+    items:
+      type: string
+  context_missing:
+    type: array
+    items:
+      type: string
+  interpretations:
+    type: array
+    items:
+      type: string
+  emotional_tone:
+    type: array
+    items:
+      type: string
+  creator_confirmed:
+    type: boolean
+  confidence:
+    enum:
+    - high
+    - medium
+    - low
+    - unknown
+additionalProperties: false

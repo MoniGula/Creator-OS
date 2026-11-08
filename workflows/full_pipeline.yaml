@@ -1,0 +1,52 @@
+name: Creator OS v3.0 Full Pipeline
+version: 0.1.0
+principle: AI proposes; evidence constrains; creator interprets and approves.
+stages:
+- order: 1
+  name: capture
+  output: memory/question records
+  human_gate_required: true
+- order: 2
+  name: contextualize
+  output: known/missing context
+  human_gate_required: true
+- order: 3
+  name: connect
+  output: relationship links
+  human_gate_required: false
+- order: 4
+  name: interrogate
+  output: assumptions and counterpositions
+  human_gate_required: true
+- order: 5
+  name: research
+  output: claims and evidence
+  human_gate_required: true
+- order: 6
+  name: synthesize
+  output: candidate theses
+  human_gate_required: true
+- order: 7
+  name: compose
+  output: canonical draft
+  human_gate_required: true
+- order: 8
+  name: challenge
+  output: five review reports
+  human_gate_required: true
+- order: 9
+  name: approve
+  output: creator-approved asset
+  human_gate_required: true
+- order: 10
+  name: translate
+  output: platform derivatives
+  human_gate_required: true
+- order: 11
+  name: publish
+  output: publication record
+  human_gate_required: true
+- order: 12
+  name: learn
+  output: reviewed learning records
+  human_gate_required: true

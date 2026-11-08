@@ -1,0 +1,91 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Belief
+type: object
+required:
+- id
+- created_at
+- privacy
+- status
+- statement
+- belief_type
+- creator_conviction
+properties:
+  id:
+    type: string
+    pattern: ^[A-Z]{2,4}-[0-9]{3,}$
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type:
+    - string
+    - 'null'
+    format: date-time
+  privacy:
+    enum:
+    - private
+    - internal
+    - shareable
+    - public
+  status:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  links:
+    type: array
+    items:
+      type: object
+      required:
+      - relation
+      - target_id
+      properties:
+        relation:
+          type: string
+        target_id:
+          type: string
+      additionalProperties: false
+  statement:
+    type: string
+  belief_type:
+    enum:
+    - factual
+    - ethical
+    - spiritual_metaphysical
+    - interpretive
+    - strategic
+    - aesthetic
+  creator_conviction:
+    enum:
+    - deep
+    - working
+    - intuition
+    - speculation
+    - unresolved
+  evidence_confidence:
+    enum:
+    - high
+    - medium
+    - low
+    - unknown
+    - not_applicable
+  grounds:
+    type: array
+    items:
+      type: string
+  counterpositions:
+    type: array
+    items:
+      type: string
+  content_guidance:
+    type: array
+    items:
+      type: string
+  last_reviewed:
+    type:
+    - string
+    - 'null'
+    format: date
+additionalProperties: false
